@@ -6,4 +6,5 @@ class AppConst {
   static double textSizeMedium = 14.sp;
   static double textSizeBig = 24.sp;
   static double textSizeLarge = 50.sp;
+  static double buttonTextSize = 40.sp;
 }
