@@ -11,9 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  get: ^4.6.5
-
   cupertino_icons: ^1.0.2
+  get: ^4.6.5
 
 dev_dependencies:
   flutter_test:
@@ -24,5 +23,14 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+
+  fonts:
+    - family: Digital-7
+      fonts:
+        - asset: assets/fonts/digital-7/digital-7.ttf
+        - asset: assets/fonts/digital-7/digital-7-itallic.ttf
+          style: italic
+        - asset: assets/fonts/digital-7/digital-7-mono.ttf
+          weight: 500
 
 
