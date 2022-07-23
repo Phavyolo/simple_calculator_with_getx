@@ -6,6 +6,7 @@ import '../utils/app_const.dart';
 
 class CustomButton extends StatelessWidget {
   final String label;
+  final Color? boxColor;
   final Function()? onTap;
   final Function()? onLongPress;
 
@@ -14,6 +15,7 @@ class CustomButton extends StatelessWidget {
     required this.label,
     this.onTap,
     this.onLongPress,
+    this.boxColor,
   }) : super(key: key);
 
   @override
@@ -22,10 +24,10 @@ class CustomButton extends StatelessWidget {
       onTap: onTap,
       onLongPress: onLongPress,
       child: Container(
-        width: 50.sp,
-        height: 50.sp,
+        width: 60.sp,
+        height: 60.sp,
         decoration: BoxDecoration(
-          color: AppColors.kPrimaryColor,
+          color: boxColor ?? AppColors.kDarkButtonColor,
           borderRadius: BorderRadius.all(
             Radius.circular(
               10.sp,

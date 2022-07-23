@@ -6,7 +6,7 @@ import '../utils/app_const.dart';
 
 class CustomTextField extends StatelessWidget {
   final TextEditingController textEditingController;
-  final Function onChanged;
+  final Function(String value) onChanged;
 
   const CustomTextField({
     Key? key,
@@ -17,11 +17,12 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      enabled: false,
       textDirection: TextDirection.rtl,
       maxLength: 12,
       showCursor: false,
       controller: textEditingController,
-      onChanged: (value) {},
+      onChanged: onChanged,
       style: TextStyle(
         color: AppColors.kTextColor,
         fontSize: AppConst.textSizeLarge,
