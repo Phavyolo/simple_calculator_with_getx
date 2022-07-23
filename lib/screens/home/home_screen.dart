@@ -28,7 +28,6 @@ class HomeScreen extends GetView<HomeController> {
                   CustomTextField(
                     textEditingController:
                         controller.textEditingController.value,
-                    onChanged: (value) {},
                   ),
                   Column(
                     children: [

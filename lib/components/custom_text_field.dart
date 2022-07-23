@@ -6,12 +6,10 @@ import '../utils/app_const.dart';
 
 class CustomTextField extends StatelessWidget {
   final TextEditingController textEditingController;
-  final Function(String value) onChanged;
 
   const CustomTextField({
     Key? key,
     required this.textEditingController,
-    required this.onChanged,
   }) : super(key: key);
 
   @override
@@ -22,12 +20,17 @@ class CustomTextField extends StatelessWidget {
       maxLength: 12,
       showCursor: false,
       controller: textEditingController,
-      onChanged: onChanged,
       style: TextStyle(
         color: AppColors.kTextColor,
         fontSize: AppConst.textSizeLarge,
       ),
       decoration: InputDecoration(
+        hintText: "0",
+        hintTextDirection: TextDirection.rtl,
+        hintStyle: TextStyle(
+          color: AppColors.kTextColor,
+          fontSize: AppConst.textSizeLarge,
+        ),
         contentPadding: EdgeInsets.symmetric(
           horizontal: 1.w,
           vertical: 1.h,
