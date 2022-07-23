@@ -29,7 +29,7 @@ flutter:
     - family: Digital-7
       fonts:
         - asset: assets/fonts/digital-7/digital-7.ttf
-        - asset: assets/fonts/digital-7/digital-7-itallic.ttf
+        - asset: assets/fonts/digital-7/digital-7-italic.ttf
           style: italic
         - asset: assets/fonts/digital-7/digital-7-mono.ttf
           weight: 500
