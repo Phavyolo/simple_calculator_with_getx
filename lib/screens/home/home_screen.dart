@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:simple_calcutor_with_getx/controllers/arithmetics_controller.dart';
 import 'package:simple_calcutor_with_getx/controllers/home_controller.dart';
 import 'package:simple_calcutor_with_getx/utils/app_colors.dart';
 import 'package:simple_calcutor_with_getx/utils/app_const.dart';
@@ -15,6 +16,8 @@ class HomeScreen extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     Get.put(HomeController());
+    ArithmeticsController arithmeticsController =
+        Get.put(ArithmeticsController());
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -50,7 +53,16 @@ class HomeScreen extends GetView<HomeController> {
                           CustomButton(
                             label: "%",
                             boxColor: AppColors.kLightButtonColor,
-                            onTap: () {},
+                            onTap: () {
+                              if (controller.initialValue.value.isNotEmpty) {
+                                arithmeticsController.operand1.value =
+                                    controller.textEditingController.value.text;
+                                controller.initialValue.value =
+                                    arithmeticsController.percentage();
+                                controller.textEditingController.value.text =
+                                    controller.initialValue.value;
+                              }
+                            },
                           ),
                           CustomButton(
                             label: "÷",
@@ -138,7 +150,10 @@ class HomeScreen extends GetView<HomeController> {
                           CustomButton(
                             label: "+",
                             boxColor: AppColors.kPrimaryColor,
-                            onTap: () {},
+                            onTap: () {
+                              // var arth = +;
+                              // print(2 "+" 2);
+                            },
                           ),
                           CustomButton(
                             label: "4",
@@ -184,7 +199,13 @@ class HomeScreen extends GetView<HomeController> {
                           CustomButton(
                             label: "-",
                             boxColor: AppColors.kPrimaryColor,
-                            onTap: () {},
+                            onTap: () {
+                              double n = 10.001;
+                              print(n.toStringAsFixed(
+                                  n.truncateToDouble() == n ? 0 : 3));
+                              print(n.truncateToDouble());
+                              print((0.5).round());
+                            },
                           ),
                           CustomButton(
                             label: "1",
