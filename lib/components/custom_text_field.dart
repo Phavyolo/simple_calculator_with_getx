@@ -16,7 +16,8 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       enabled: false,
-      textDirection: TextDirection.rtl,
+      textDirection: TextDirection.ltr,
+      textAlign: TextAlign.right,
       maxLength: 12,
       showCursor: false,
       controller: textEditingController,
