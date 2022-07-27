@@ -151,8 +151,14 @@ class HomeScreen extends GetView<HomeController> {
                             label: "+",
                             boxColor: AppColors.kPrimaryColor,
                             onTap: () {
-                              // var arth = +;
-                              // print(2 "+" 2);
+                              arithmeticsController.operator.value = "+";
+
+                              if (controller.textEditingController.value.text
+                                  .isNotEmpty) {
+                                arithmeticsController.operand1.value =
+                                    controller.textEditingController.value.text;
+                                controller.initialValue.value = "";
+                              }
                             },
                           ),
                           CustomButton(
@@ -251,7 +257,26 @@ class HomeScreen extends GetView<HomeController> {
                           CustomButton(
                             label: "=",
                             boxColor: AppColors.kPrimaryColor,
-                            onTap: () {},
+                            onTap: () {
+                              if (controller.textEditingController.value.text
+                                  .isNotEmpty) {
+                                switch (arithmeticsController.operator.value) {
+                                  case "+":
+                                    {
+                                      arithmeticsController.operand2.value =
+                                          controller.initialValue.value;
+                                      controller.textEditingController.value
+                                          .text = arithmeticsController.add();
+                                      arithmeticsController.operand1.value =
+                                          controller
+                                              .textEditingController.value.text;
+                                    }
+                                    break;
+                                  default:
+                                    {}
+                                }
+                              }
+                            },
                           ),
                           CustomButton(
                             label: "±",
