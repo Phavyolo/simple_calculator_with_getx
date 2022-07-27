@@ -17,6 +17,12 @@ class ArithmeticsController extends GetxController {
     return (opr1 - opr2).toString();
   }
 
+  mul() {
+    double opr1 = double.parse(operand1.value);
+    double opr2 = double.parse(operand2.value);
+    return (opr1 * opr2).toString();
+  }
+
   percentage() {
     double opr1 = double.parse(operand1.value);
     return (opr1 / 100).toString();

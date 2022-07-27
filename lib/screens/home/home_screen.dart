@@ -104,7 +104,16 @@ class HomeScreen extends GetView<HomeController> {
                           CustomButton(
                             label: "×",
                             boxColor: AppColors.kPrimaryColor,
-                            onTap: () {},
+                            onTap: () {
+                              arithmeticsController.operator.value = "*";
+
+                              if (controller.textEditingController.value.text
+                                  .isNotEmpty) {
+                                arithmeticsController.operand1.value =
+                                    controller.textEditingController.value.text;
+                                controller.initialValue.value = "";
+                              }
+                            },
                           ),
                           CustomButton(
                             label: "7",
@@ -287,6 +296,17 @@ class HomeScreen extends GetView<HomeController> {
                                           controller.initialValue.value;
                                       controller.textEditingController.value
                                           .text = arithmeticsController.sub();
+                                      arithmeticsController.operand1.value =
+                                          controller
+                                              .textEditingController.value.text;
+                                    }
+                                    break;
+                                  case "*":
+                                    {
+                                      arithmeticsController.operand2.value =
+                                          controller.initialValue.value;
+                                      controller.textEditingController.value
+                                          .text = arithmeticsController.mul();
                                       arithmeticsController.operand1.value =
                                           controller
                                               .textEditingController.value.text;
