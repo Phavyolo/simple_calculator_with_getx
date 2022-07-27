@@ -68,11 +68,13 @@ class HomeScreen extends GetView<HomeController> {
                             label: "÷",
                             boxColor: AppColors.kLightButtonColor,
                             onTap: () {
-                              if (controller.initialValue.value.length < 12) {
-                                controller.initialValue.value =
-                                    "${controller.initialValue.value}1";
-                                controller.textEditingController.value.text =
-                                    controller.initialValue.value;
+                              arithmeticsController.operator.value = "/";
+
+                              if (controller.textEditingController.value.text
+                                  .isNotEmpty) {
+                                arithmeticsController.operand1.value =
+                                    controller.textEditingController.value.text;
+                                controller.initialValue.value = "";
                               }
                             },
                           ),
@@ -307,6 +309,17 @@ class HomeScreen extends GetView<HomeController> {
                                           controller.initialValue.value;
                                       controller.textEditingController.value
                                           .text = arithmeticsController.mul();
+                                      arithmeticsController.operand1.value =
+                                          controller
+                                              .textEditingController.value.text;
+                                    }
+                                    break;
+                                  case "/":
+                                    {
+                                      arithmeticsController.operand2.value =
+                                          controller.initialValue.value;
+                                      controller.textEditingController.value
+                                          .text = arithmeticsController.div();
                                       arithmeticsController.operand1.value =
                                           controller
                                               .textEditingController.value.text;
