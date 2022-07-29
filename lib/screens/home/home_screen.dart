@@ -333,7 +333,16 @@ class HomeScreen extends GetView<HomeController> {
                           ),
                           CustomButton(
                             label: "±",
-                            onTap: () {},
+                            onTap: () {
+                              if (controller.initialValue.value.isNotEmpty) {
+                                arithmeticsController.operand1.value =
+                                    controller.textEditingController.value.text;
+                                controller.initialValue.value =
+                                    arithmeticsController.negate();
+                                controller.textEditingController.value.text =
+                                    controller.initialValue.value;
+                              }
+                            },
                           ),
                           CustomButton(
                             label: ".",

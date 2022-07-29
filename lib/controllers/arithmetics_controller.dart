@@ -33,4 +33,9 @@ class ArithmeticsController extends GetxController {
     double opr1 = double.parse(operand1.value);
     return (opr1 / 100).toString();
   }
+
+  negate() {
+    double opr1 = double.parse(operand1.value);
+    return (-opr1).toString();
+  }
 }
